@@ -569,7 +569,7 @@ ho_segment_fonts (const ho_bitmap * m, const ho_bitmap * m_line_map,
 
   m_out = ho_bitmap_new (m->width, m->height);
   if (!m_out) {
-    //free (line_fill);
+    free (line_fill);
     return NULL;
   }
   
@@ -586,7 +586,7 @@ ho_segment_fonts (const ho_bitmap * m, const ho_bitmap * m_line_map,
 
   m_temp = ho_bitmap_clone (m);
   if (!m_temp) {
-    //free (line_fill);
+    free (line_fill);
     ho_bitmap_free (m_out);
     return NULL;
   }
@@ -737,7 +737,7 @@ ho_segment_fonts (const ho_bitmap * m, const ho_bitmap * m_line_map,
   /* thin interfont lines to one line per font */
   m_temp = ho_bitmap_new (m->width, m->height);
   if (!m_temp) {
-    //free (line_fill);
+    free (line_fill);
     ho_bitmap_free (m_out);
     return NULL;
   }
